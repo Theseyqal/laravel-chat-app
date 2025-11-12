@@ -1,5 +1,4 @@
 # 💬 Laravel Realtime Chat (Laravel 11 + Pusher + MySQL)
-
 A real-time chat application built with **Laravel 11**, **Pusher**, and **MySQL**, featuring private messaging, online presence detection, and complete authentication powered by Laravel Breeze.
 
 ## ✨ Features
@@ -22,46 +21,45 @@ A real-time chat application built with **Laravel 11**, **Pusher**, and **MySQL*
 - **Tooling:** Pest, Pint, Pail, Sail, Vite
 
 ## ⚙️ Installation
-
-### 1. Clone & Install
+### 1️⃣ Clone & Install
 ```bash
-git clone https://github.com/<your-username>/<repo>.git
+git clone https://github.com/DevAliG/laravel-chat-app.git
 cd <repo>
 composer install
 npm install
-
-### 2. Environment Setup
-
+```
+### 2️⃣ Environment Setup
+```bash
 cp .env.example .env
 php artisan key:generate
-
-### 3. Database Configuration
-
-In .env:
-
+```
+### 3️⃣ Database Configuration
+In `.env`:
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=chat_app
 DB_USERNAME=root
 DB_PASSWORD=your_password
-
+```
 Then run:
+```bash
 php artisan migrate
-
-### 4. Queue & Broadcasting
-
-In .env:
-
+```
+### 4️⃣ Queue & Broadcasting
+In `.env`:
+```
 BROADCAST_DRIVER=pusher
 QUEUE_CONNECTION=database
-
+```
 Create queue tables:
-
+```bash
 php artisan queue:table
 php artisan migrate
-
-### 5. Pusher Configuration
+```
+### 5️⃣ Pusher Configuration
+```
 PUSHER_APP_ID=your_app_id
 PUSHER_APP_KEY=your_key
 PUSHER_APP_SECRET=your_secret
@@ -69,68 +67,64 @@ PUSHER_HOST=
 PUSHER_PORT=443
 PUSHER_SCHEME=https
 PUSHER_APP_CLUSTER=eu
-
-### 6. Run the Application
+```
+### 6️⃣ Run the Application
+```bash
 composer run dev
 # or manually
 php artisan serve
 php artisan queue:listen --tries=1
 php artisan pail --timeout=0
 npm run dev
+```
+Visit: **http://localhost:8000**
 
-
-Visit: http://localhost:8000
-
-##🔌 Broadcasting Channels
+## 🔌 Broadcasting Channels
+```php
 Broadcast::channel('message.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
-
 Broadcast::channel('online', function ($user) {
     return $user->toArray();
 });
+```
 
-🧩 Example (Laravel Echo)
+## 🧩 Example (Laravel Echo)
+```js
 // Private message channel
 Echo.private(`message.${userId}`).listen('NewMessage', e => {
   console.log('New message:', e);
 });
-
 // Presence channel
 Echo.join('online')
   .here(users => console.log('Online users:', users))
   .joining(user => console.log(`${user.name} joined`))
   .leaving(user => console.log(`${user.name} left`));
+```
 
-🧪 Testing
+## 🧪 Testing
+```bash
 php artisan test
 # or
 ./vendor/bin/pest
+```
 
-🧹 Code Style
+## 🧹 Code Style
+```bash
 ./vendor/bin/pint
+```
 
-🚀 Roadmap
+## 🚀 Roadmap
+- [x] Authentication (Breeze)
+- [x] Realtime private messaging
+- [x] Online presence via Pusher
+- [x] Queue-based broadcasting
+- [ ] Chat rooms & group messages
+- [ ] File and media attachments
+- [ ] Notifications
+- [ ] Deployment to Render/AWS
 
- Authentication (Breeze)
-
- Realtime private messaging
-
- Online presence via Pusher
-
- Queue-based broadcasting
-
- Chat rooms & group messages
-
- File and media attachments
-
- Notifications
-
- Deployment to Render/AWS
-
-👤 Author
-
-DevAliG [Ali Ghanbarzadeh]
-Backend Developer — Laravel & PHP
-LinkedIn
- • GitHub
+## 👤 Author
+**DevAliG (Ali Ghanbarzadeh)**  
+Backend Developer — Laravel & PHP  
+[LinkedIn](https://www.linkedin.com/in/devalig) • [GitHub](https://github.com/DevAliG)
