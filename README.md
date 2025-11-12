@@ -12,6 +12,11 @@ A real-time chat application built with **Laravel 11**, **Pusher**, and **MySQL*
 - 📡 Live application logs via **Laravel Pail**
 - 🐳 Optional Docker environment with **Laravel Sail**
 
+## 🎬 Demo
+
+![Chat Demo](./chat-app-demo.gif)
+
+
 ## 🛠 Tech Stack
 - **Framework:** Laravel 11 (PHP 8.2+)
 - **Database:** MySQL
