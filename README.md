@@ -28,7 +28,7 @@ A real-time chat application built with **Laravel 11**, **Pusher**, and **MySQL*
 ## ⚙️ Installation
 ### 1️⃣ Clone & Install
 ```bash
-git clone https://github.com/DevAliG/laravel-chat-app.git
+git clone https://github.com/Theseyqal/laravel-chat-app.git
 cd <repo>
 composer install
 npm install
@@ -130,7 +130,8 @@ php artisan test
 - [ ] Deployment to Render/AWS
 
 ## 👤 Author
-**DevAliG (Ali Ghanbarzadeh)**  
-SaaS & MVP Builder | Tech Content Creator
+** Ali Ghanbarzadeh (TheSeyqal)**  
+SaaS & MVP Builder | Tech Content Creator | Educator
 
-[LinkedIn](https://www.linkedin.com/in/devalig) • [GitHub](https://github.com/DevAliG)
+### 🌐 Socials  
+[LinkedIn](https://www.linkedin.com/in/alighanbarzadeh) | [YouTube](https://www.youtube.com/@theseyqal) | [X](https://x.com/TheSeyqal) | [TikTok](https://www.tiktok.com/@theseyqal) | [GitHub](https://github.com/Theseyqal) 
